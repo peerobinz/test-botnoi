@@ -11,11 +11,11 @@ We want you to build a web application with the following requirements:
 |As a user, I want to see the details of each Pokémon, so that I can see the abilities of a Pokémon.|- I can see HP level of a Pokémon.<br>- I can see Strength level of a Pokémon.<br>- I can see Weakness level of a Pokémon.<br>- I can see Happiness level of a Pokémon.|
 
 ## Limitation
-- Good news!! Support only on iPad (1024x768) screen size :)) no RESPONSIVE!!
+- Support only on iPad (1024x768) screen size, no RESPONSIVE!!
 
-## Also, we already prepared some stuff for you!!! :D
+## Also, we already prepared some stuff for you
 
-### 1. Base project (includes iPad layout screen, so cool!!)
+### 1. Base project (includes iPad layout screen)
 
 ### 2. Service API
   - You can run service api by `yarn run api`
@@ -64,17 +64,12 @@ We want you to build a web application with the following requirements:
 ![Pokédex MockUp](screenshot/exam-crop.gif)
 
 ### 5. Fonts (from Google Fonts)
-  - `Atma:700`
+  - `Atma:500:700`
   - `Gaegu`
 
 ### 6. Color codes
 
 ![Pokédex MockUp](screenshot/color-codes.png)
-
-## How we score you??!!!
-  - If you can complete all the requirements above, We surely score you 100!!!! NO reason!!
-    - We will give you all the feedback later ;)
-  - IF YOU FEEL LIKE SOMETHING IS MISSING, WE HAVE EXTRA SCORE FOR ANY ADDITIONAL THING YOU CAN PROVIDE. (Extra can be unit test, refactoring, performance tuning, etc. REMEMBER MAXIMUM IS NOT 100!!!)
 
 If you have any questions, please do not hesitate to ask us anytime.
 Wish you luck!! :)
