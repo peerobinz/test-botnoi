@@ -53,7 +53,7 @@ We want you to build a web application with the following requirements:
     }
   
     Output {
-      hp: 110,
+      hp: 100,
       strength: '100%',
       weakness: '50%',
       damage: 90,
