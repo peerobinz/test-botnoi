@@ -1,27 +1,80 @@
-# BnPokedex
+# Botnoi Pokédex (My Pokémon cards list)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+We want you to build a web application with the following requirements:
 
-## Development server
+| User Story | Acceptance Criteria |
+|:---|:---|
+|As a user, I want to see my Pokédex, so that I can build a list of Pokémon cards that I like.|- I can see the list of my Pokémon cards.<br>- I can add a Pokémon card to my Pokédex from search result list.<br>- I can remove a Pokémon card from my Pokédex.|
+|As a user, I want to be able to search for a Pokémon card, so that I can add it into my Pokédex.|- I can search based on Pokémon name.<br>- I can search based on Pokémon type.|
+|As a user, I want to see only unselected Pokémon cards on the search list, so that I can select a different Pokémon card.|- I can see only unselect Pokémon cards on the result list.|
+|As a user, I want to cancel adding a Pokémon to my Pokédex, so that I can close the Pokémon list modal.|- I can close the Pokémon list modal by clicking outside.|
+|As a user, I want to see the details of each Pokémon, so that I can see the abilities of a Pokémon.|- I can see HP level of a Pokémon.<br>- I can see Strength level of a Pokémon.<br>- I can see Weakness level of a Pokémon.<br>- I can see Happiness level of a Pokémon.|
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Limitation
+- Good news!! Support only on iPad (1024x768) screen size :)) no RESPONSIVE!!
 
-## Code scaffolding
+## Also, we already prepared some stuff for you!!! :D
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1. Base project (includes iPad layout screen, so cool!!)
 
-## Build
+### 2. Service API
+  - You can run service api by `yarn run api`
+  - The endpoint to get Pokémon list is `[GET]http://localhost:3030/api/cards`
+  - query
+    - limit: default 20 item/
+    - name: search monster by name
+    - type: search monster by type
+    - example: http://localhost:3030/api/cards?limit=30&name=deoxys%20ex&type=psychic
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 3. How to calculate `HP level`, `Strength level`, `Weakness level` and `Happiness level`.
 
-## Running unit tests
+  - HP level calculation
+      - maximum is 100. if value is higher than 100 set it to 100, otherwise 0.
+  - Strength level calculation
+      - use `attacks` length to multiply by 50, maximum is 100. e.g. if value is 1 set it to 50, 2 set it to 100, otherwise 0.
+  - Weakness level calculation
+      - use `weaknesses` length multiply by 100, maximum is 100. e.g. if value is 1 set it to 100, otherwise 0.
+  - Damage calculation
+      - use `damage` value without symbol of all attacks skill. e.g. 50+ set it to 50, 20* set it to 20, otherwise 0.
+  - Happiness level calculation
+      - ((HP / 10) + (Damage /10 ) + 10 - (Weakness)) / 5
+      
+  #### Example
+    Pikachu {
+      name: 'Deoxys ex',
+      hp: '110',
+      attacks: [
+        { name: 'attack A', damage: '50+'},
+        { name: 'attack B', damage: '40x'}
+      ],
+      weaknesses: [
+        { name: 'weakness A'},
+      ]
+    }
+  
+    Output {
+      hp: 110,
+      strength: '100%',
+      weakness: '50%',
+      damage: 90,
+      happiness: 6
+    }
+### 4. Interactive MockUp (as a .gif file)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Pokédex MockUp](screenshot/exam-crop.gif)
 
-## Running end-to-end tests
+### 5. Fonts (from Google Fonts)
+  - `Atma:700`
+  - `Gaegu`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 6. Color codes
 
-## Further help
+![Pokédex MockUp](screenshot/color-codes.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## How we score you??!!!
+  - If you can complete all the requirements above, We surely score you 100!!!! NO reason!!
+    - We will give you all the feedback later ;)
+  - IF YOU FEEL LIKE SOMETHING IS MISSING, WE HAVE EXTRA SCORE FOR ANY ADDITIONAL THING YOU CAN PROVIDE. (Extra can be unit test, refactoring, performance tuning, etc. REMEMBER MAXIMUM IS NOT 100!!!)
+
+If you have any questions, please do not hesitate to ask us anytime.
+Wish you luck!! :)
