@@ -55,9 +55,9 @@ We want you to build a web application with the following requirements:
     Output {
       hp: 100,
       strength: '100%',
-      weakness: '50%',
+      weakness: '100%',
       damage: 90,
-      happiness: 6
+      happiness: 5
     }
 ### 4. Interactive MockUp (as a .gif file)
 
