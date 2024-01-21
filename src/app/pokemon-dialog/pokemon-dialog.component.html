@@ -1,0 +1,36 @@
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Find Pokémon">
+  <div class="search-icon" (click)="searchPokemon()"></div>
+</div>
+<div *ngFor="let pokemon of pokemonData"  (click)="onPokemonSelected(pokemon)">
+  <div class="pokemon-card">
+      <div class="pokemon-header">
+        <div class="add-button-container">
+          <button class="add-button" (click)="onAddPokemon()">Add</button>
+        </div>
+          <img [src]="pokemon.imageUrl" alt="{{ pokemon.name }}" class="pokemon-image">
+      </div>
+      <div class="pokemon-details">
+        <h2>{{ pokemon.name }}</h2>
+          <!-- <p>Type: {{ pokemon.type }}</p> -->
+          <div class="action-container">
+              <div class="pokemon-info">
+                <div class="hp-bar-container">
+                  <p>HP  </p>
+                  <mat-progress-bar [value]="calculateHPPercentage(pokemon.hp)" mode="determinate"
+                    [ngStyle]="{ 'background-color': 'lightgrey', 'color': 'green' }"></mat-progress-bar>
+                  <p>{{ calculateHPPercentage(pokemon.hp) }} / 100 </p>
+                </div>
+                  <div class="weak-bar-container">
+                      <p>Weak  {{ pokemon.damage }}</p>
+                      <mat-progress-bar [value]="pokemon.damage"></mat-progress-bar>
+                  </div>
+                  <div class="Str-bar-container">
+                      <p>Str  {{ pokemon.convertedRetreatCost }}</p>
+                      <mat-progress-bar [value]="calculateProgressBarValue(pokemon.convertedRetreatCost)" mode="determinate"></mat-progress-bar>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

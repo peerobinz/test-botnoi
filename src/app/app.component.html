@@ -1,1 +1,38 @@
-<div id="root"></div>
+<div id="root">
+  <div class="title">
+    My Pokédex
+  </div>
+
+  <div class="bottom-bar">
+    <a class="add" (click)="openPokemonDialog()">+</a>
+  </div>
+
+  <div class="pokedex-container">
+    <div *ngFor="let addedPokemon of addedPokemonList; let i = index" class="pokemon-card">
+      <div class="pokemon-header">
+        <img [src]="addedPokemon.imageUrl" alt="{{ addedPokemon.name }}" class="pokemon-image">
+      </div>
+      <div class="pokemon-details">
+        <div class="delete-button" (click)="deletePokemonCard(i)">Delete</div>
+        <h2>{{ addedPokemon.name }}</h2>
+        <div class="status-bar">
+          <div class="status-bar-item">
+            <p>HP  </p>
+            <mat-progress-bar [value]="calculateHPPercentage(addedPokemon.hp)"></mat-progress-bar>
+            <p>{{ addedPokemon.hp }} / 100</p>
+          </div>
+          <div class="status-bar-item">
+            <p>Weak  </p>
+            <mat-progress-bar [value]="calculateProgressBarValue(addedPokemon.damage)"></mat-progress-bar>
+            <p>{{ addedPokemon.damage }}</p>
+          </div>
+          <div class="status-bar-item">
+            <p>Str  </p>
+            <mat-progress-bar [value]="calculateProgressBarValue(addedPokemon.convertedRetreatCost)" mode="determinate"></mat-progress-bar>
+            <p>{{ addedPokemon.convertedRetreatCost }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

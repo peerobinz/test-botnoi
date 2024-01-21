@@ -1,0 +1,132 @@
+#root {
+  width: 1024px;
+  height: 768px;
+}
+
+body {
+    margin: 0;
+    width: 1024px; 
+    height: 768px;
+    margin: auto;
+    background-color: #f3f3f3;
+  }
+  .title {
+    text-align: center;
+    font-family: 'Gaegu';
+    font-size: 50px;
+    margin-top: 20px;
+  }
+
+  .bottom-bar {
+    width: 100%;
+    height: 100px;
+    background-color: var(--bottom-bar-background);
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .add {
+    font-size: 80px;
+    background-color: var(--bottom-bar-background);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    border: 5px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+  }
+  
+  :root {
+    --card-box-shadow: #d5d6dc;
+    --card-box-shadow-hover: #aeaeae;
+    --card-background: #f3f4f7;
+    --color-add-button: #7777dc;
+    --level-tube-background: #e4e4e4;
+    --level-tube-box-shadow: #d4d4d4;
+    --level-tube-value-background: #1a70f3;
+    --bottom-bar-background: #5656ec;
+    --bottom-bar-box-shadow: rgba(51, 51, 217, 0.53);
+    --bottom-bar-text-color: #ffffff;
+    --modal-outside: rgba(0, 0, 0, 0.4);
+    --modal-content-box-shadow: #474444;
+    --modal-content-background: #ffffff;
+    --search-box-border: #e6e6e6;
+  }
+
+  .pokemon-card {
+    display: flex;
+    align-items: center;
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    
+    overflow: hidden; 
+    .pokemon-image {
+        width: 200px;
+        height: 250px;
+        margin-right: 20px;
+    }
+
+    .pokemon-details {
+        h2 {
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin: 4px 0;
+        }
+    }
+}
+
+div * {
+  font-family: 'Gaegu';
+}
+mat-progress-bar {
+  width: 100%;
+  height: 35px;
+  border-radius: 20px;
+  background-color: var(--level-tube-background);
+}
+
+.weak-bar-container {
+  display: flex;
+  align-items: center;
+  width: 300%;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.Str-bar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+}
+.pokedex-container {
+  max-height: 700px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+}
+
+.delete-button {
+  cursor: pointer;
+  padding: 5px;
+  background-color: #ff6f6f;
+  color: white;
+  border-radius: 4px;
+  margin-top: 5px;
+  text-align: center;
+}
